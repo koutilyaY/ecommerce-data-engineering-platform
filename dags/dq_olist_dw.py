@@ -55,17 +55,16 @@ def check_nulls(**context):
 
     # Each item: (table, column)
     critical_columns = [
-        ("dw.dim_customers", "customer_sk"),
+        # Dimensions
         ("dw.dim_customers", "customer_id"),
-        ("dw.dim_products", "product_sk"),
         ("dw.dim_products", "product_id"),
-        ("dw.dim_sellers", "seller_sk"),
         ("dw.dim_sellers", "seller_id"),
-        ("dw.fact_orders", "order_sk"),
+
+        # Fact table natural keys / foreign keys
         ("dw.fact_orders", "order_id"),
-        ("dw.fact_orders", "customer_sk"),
-        ("dw.fact_orders", "product_sk"),
-        ("dw.fact_orders", "seller_sk"),
+        ("dw.fact_orders", "customer_id"),
+        ("dw.fact_orders", "product_id"),
+        ("dw.fact_orders", "seller_id"),
     ]
 
     for table, column in critical_columns:
@@ -77,6 +76,7 @@ def check_nulls(**context):
             raise AirflowException(
                 f"Null check failed: {table}.{column} has {null_count} NULL values"
             )
+
 
 
 def check_fk_integrity(**context):
