@@ -1,0 +1,59 @@
+slice_name: Delivery Status Breakdown
+description: null
+certified_by: null
+certification_details: null
+viz_type: pie
+params:
+  datasource: 5__table
+  viz_type: pie
+  groupby:
+  - delivery_status
+  - num_orders
+  metric:
+    expressionType: SIMPLE
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: num_orders
+      description: null
+      expression: null
+      filterable: true
+      groupby: true
+      id: 35
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: BIGINT
+      type_generic: 0
+      verbose_name: null
+      warning_markdown: null
+    aggregate: SUM
+    sqlExpression: null
+    datasourceWarning: false
+    hasCustomLabel: false
+    label: SUM(num_orders)
+    optionName: metric_ph9xvnn4hy_6gjzws39y6k
+  adhoc_filters: []
+  row_limit: 100
+  sort_by_metric: true
+  color_scheme: supersetColors
+  show_labels_threshold: 5
+  show_legend: true
+  legendType: scroll
+  legendOrientation: top
+  label_type: key
+  number_format: SMART_NUMBER
+  date_format: smart_date
+  show_labels: true
+  labels_outside: true
+  outerRadius: 70
+  innerRadius: 30
+  extra_form_data: {}
+  dashboards:
+  - 2
+query_context: '{"datasource":{"id":5,"type":"table"},"force":false,"queries":[{"filters":[],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":["delivery_status","num_orders"],"metrics":[{"expressionType":"SIMPLE","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"num_orders","description":null,"expression":null,"filterable":true,"groupby":true,"id":35,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"BIGINT","type_generic":0,"verbose_name":null,"warning_markdown":null},"aggregate":"SUM","sqlExpression":null,"datasourceWarning":false,"hasCustomLabel":false,"label":"SUM(num_orders)","optionName":"metric_ph9xvnn4hy_6gjzws39y6k"}],"orderby":[[{"expressionType":"SIMPLE","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"num_orders","description":null,"expression":null,"filterable":true,"groupby":true,"id":35,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"BIGINT","type_generic":0,"verbose_name":null,"warning_markdown":null},"aggregate":"SUM","sqlExpression":null,"datasourceWarning":false,"hasCustomLabel":false,"label":"SUM(num_orders)","optionName":"metric_ph9xvnn4hy_6gjzws39y6k"},false]],"annotation_layers":[],"row_limit":100,"series_limit":0,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"5__table","viz_type":"pie","groupby":["delivery_status","num_orders"],"metric":{"expressionType":"SIMPLE","column":{"advanced_data_type":null,"certification_details":null,"certified_by":null,"column_name":"num_orders","description":null,"expression":null,"filterable":true,"groupby":true,"id":35,"is_certified":false,"is_dttm":false,"python_date_format":null,"type":"BIGINT","type_generic":0,"verbose_name":null,"warning_markdown":null},"aggregate":"SUM","sqlExpression":null,"datasourceWarning":false,"hasCustomLabel":false,"label":"SUM(num_orders)","optionName":"metric_ph9xvnn4hy_6gjzws39y6k"},"adhoc_filters":[],"row_limit":100,"sort_by_metric":true,"color_scheme":"supersetColors","show_labels_threshold":5,"show_legend":true,"legendType":"scroll","legendOrientation":"top","label_type":"key","number_format":"SMART_NUMBER","date_format":"smart_date","show_labels":true,"labels_outside":true,"outerRadius":70,"innerRadius":30,"extra_form_data":{},"dashboards":[2],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 61f37b03-2e0e-4f6c-8111-fdb87d216312
+version: 1.0.0
+dataset_uuid: 5a992ffa-b54b-46ef-b864-e5496b79a95d
