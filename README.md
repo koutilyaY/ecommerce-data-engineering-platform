@@ -63,6 +63,7 @@ Exported YAML dashboard + chart definitions included
 
 
 📁 Project Structure
+```
 ecommerce-data-engineering-platform/
 │
 ├── dags/
@@ -96,8 +97,10 @@ ecommerce-data-engineering-platform/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
 
 🧱 Architecture Diagram
+```
           +--------------------------+
           |     Raw CSV Files        |
           +------------+-------------+
@@ -127,4 +130,60 @@ ecommerce-data-engineering-platform/
 
    Streaming Layer:
        Kafka Producers --> Kafka Topics --> Kafka Consumers --> STG
+```
+📊 Superset Dashboard (Screenshots)
+Daily & Monthly Revenue Trend
+
+<img width="477" height="331" alt="image" src="https://github.com/user-attachments/assets/758691dd-496f-4e20-91d2-8cf31ea929c9" />
+
+Total Sales & Orders Trend
+
+<img width="484" height="328" alt="image" src="https://github.com/user-attachments/assets/a519e069-3916-451b-bc97-08ea9387a137" />
+
+Delivery Status Breakdown
+
+<img width="483" height="323" alt="image" src="https://github.com/user-attachments/assets/d4c82e3c-c341-423c-9093-53798302c0b4" />
+
+Total Revenue
+
+<img width="481" height="321" alt="image" src="https://github.com/user-attachments/assets/fa0e1517-032a-4f3f-974c-9549f9a3fe76" />
+
+Average Order Value (AOV)
+
+<img width="483" height="320" alt="image" src="https://github.com/user-attachments/assets/133ab35c-5525-4331-af3d-bfd40b6c4c4c" />
+
+Monthly Revenue Trend
+
+<img width="480" height="328" alt="image" src="https://github.com/user-attachments/assets/1bc65055-0aff-47ce-83f2-a7be6d980d5f" />
+
+
+⚙️ How to Run the Project
+1. Start Docker
+   docker-compose up -d
+2. Open Airflow
+   http://localhost:8080
+   
+Trigger in this order:
+
+ingest_orders_csv
+
+ingest_olist_staging
+
+build_olist_dw
+
+dq_olist_dw
+
+3. Open Superset
+   http://localhost:8088
+Settings → Import → Select metadata + dashboard YAML
+
+
+
+
+
+
+
+
+
+
 

@@ -1,0 +1,28 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.env
+.venv
+venv/
+
+# Data folders
+data/
+data/raw/
+data/interim/
+data/processed/
+
+# Kafka / logs
+logs/
+kafka-logs/
+zookeeper/
+
+# IDE
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
