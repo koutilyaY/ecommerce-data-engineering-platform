@@ -63,6 +63,7 @@ Exported YAML dashboard + chart definitions included
 
 
 📁 Project Structure
+```
 ecommerce-data-engineering-platform/
 │
 ├── dags/
@@ -96,8 +97,10 @@ ecommerce-data-engineering-platform/
 ├── requirements.txt
 ├── .gitignore
 └── README.md
+```
 
 🧱 Architecture Diagram
+```
           +--------------------------+
           |     Raw CSV Files        |
           +------------+-------------+
@@ -127,4 +130,13 @@ ecommerce-data-engineering-platform/
 
    Streaming Layer:
        Kafka Producers --> Kafka Topics --> Kafka Consumers --> STG
+```
+📊 Superset Dashboard (Screenshots)
+Daily & Monthly Revenue Trend
+
+<img width="477" height="331" alt="image" src="https://github.com/user-attachments/assets/758691dd-496f-4e20-91d2-8cf31ea929c9" />
+
+
+
+
 
