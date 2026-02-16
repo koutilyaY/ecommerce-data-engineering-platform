@@ -2,21 +2,32 @@ End-to-End Ecommerce Analytics & Data Platform
 
 Production-style data platform that ingests batch and streaming ecommerce data, transforms it using an ELT architecture into an analytics-ready warehouse, enforces automated data quality validation, and delivers executive dashboards for business decision-making.
 
-Business Context
+🎯 Business Problem
+Challenges Faced by Ecommerce Organizations
 
-Modern ecommerce organizations face significant data challenges:
+Fragmented data across multiple transactional systems
 
-Disparate data sources across transactional systems
+Inconsistent KPI definitions across teams
 
-Inconsistent KPI definitions across business units
-
-Limited visibility into revenue, fulfillment, and customer behavior
+Limited visibility into revenue and operational performance
 
 Unvalidated data leading to unreliable reporting
 
-Lack of near real-time analytical capabilities
+Absence of near real-time analytics capabilities
+Business Value Delivered
 
-Without a unified data foundation, decision-making becomes fragmented and reactive.
+This platform addresses these challenges by:
+
+Centralizing batch and streaming data into a unified warehouse
+
+Standardizing KPI definitions through dimensional modeling
+
+Enforcing automated data quality validation
+
+Enabling executive-level revenue and operational dashboards
+
+Supporting near real-time decision-making workflows
+
 
 ## 🚀 Features
 
