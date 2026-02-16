@@ -3,31 +3,21 @@ Modern End-to-End Data Engineering Project Using Airflow, Kafka, Postgres, Docke
 
 This project demonstrates a production-grade data engineering platform designed to process, transform, and analyze ecommerce data. It includes batch ingestion, real-time streaming pipelines, orchestration, data quality checks, a dimensional data warehouse, and a Business Intelligence dashboard built using Apache Superset.
 
-Business Problem Solved
+🎯 Business Problem
 
-Ecommerce organizations frequently face:
+Ecommerce companies struggle with:
 
-Fragmented data sources
+Fragmented data across multiple sources
 
-Inconsistent metrics across teams
+Inconsistent KPIs across teams
 
-Poor visibility into revenue and operational KPIs
+Poor visibility into revenue & operational metrics
 
-Unreliable data due to missing validations
+Unvalidated data causing unreliable dashboards
 
-Lack of real-time analytics capability
+Lack of near real-time analytics
 
-This platform centralizes and validates data across the business lifecycle, enabling:
-
-Revenue tracking
-
-Average Order Value (AOV) monitoring
-
-Delivery performance analytics
-
-Customer behavior insights
-
-Data-driven operational decisions
+This platform centralizes, validates, and standardizes ecommerce data into a single source of truth.
 
 ## 🚀 Features
 
@@ -95,35 +85,23 @@ ecommerce-data-engineering-platform/
 
 🧱 Architecture Diagram
 ```
-          +--------------------------+
-          |     Raw CSV Files        |
-          +------------+-------------+
-                       |
-                [Airflow Ingestion]
-                       |
-                       v
-         +-------------+--------------+
-         |        Postgres STG        |
-         +-------------+--------------+
-                       |
-                [DW Build DAG]
-                       |
-                       v
-       +---------------+----------------+ 
-       |           Data Warehouse       |
-       | (fact_orders, dim tables...)   |
-       +---------------+----------------+
-                       |
-                [DQ DAG Runs]
-                       |
-                       v
-         +-------------+--------------+
-         |       Apache Superset      |
-         |   BI Dashboard & Analytics |
-         +----------------------------+
+CSV Files (Batch)         Kafka Producers (Streaming)
+        │                           │
+        ▼                           ▼
+     Airflow DAGs            Kafka Topics
+        │                           │
+        ▼                           ▼
+  PostgreSQL Staging  ←  Kafka Consumers
+        │
+        ▼
+  Data Warehouse (Star Schema)
+        │
+        ▼
+  Data Quality DAG
+        │
+        ▼
+  Apache Superset Dashboards
 
-   Streaming Layer:
-       Kafka Producers --> Kafka Topics --> Kafka Consumers --> STG
 ```
 📊 Superset Dashboard (Screenshots)
 Daily & Monthly Revenue Trend
