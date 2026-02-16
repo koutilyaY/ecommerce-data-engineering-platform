@@ -1,23 +1,22 @@
-🛒 Ecommerce Data Engineering Platform
-Modern End-to-End Data Engineering Project Using Airflow, Kafka, Postgres, Docker & Superset
+End-to-End Ecommerce Analytics & Data Platform
 
-This project demonstrates a production-grade data engineering platform designed to process, transform, and analyze ecommerce data. It includes batch ingestion, real-time streaming pipelines, orchestration, data quality checks, a dimensional data warehouse, and a Business Intelligence dashboard built using Apache Superset.
+Production-style data platform that ingests batch and streaming ecommerce data, transforms it using an ELT architecture into an analytics-ready warehouse, enforces automated data quality validation, and delivers executive dashboards for business decision-making.
 
-🎯 Business Problem
+Business Context
 
-Ecommerce companies struggle with:
+Modern ecommerce organizations face significant data challenges:
 
-Fragmented data across multiple sources
+Disparate data sources across transactional systems
 
-Inconsistent KPIs across teams
+Inconsistent KPI definitions across business units
 
-Poor visibility into revenue & operational metrics
+Limited visibility into revenue, fulfillment, and customer behavior
 
-Unvalidated data causing unreliable dashboards
+Unvalidated data leading to unreliable reporting
 
-Lack of near real-time analytics
+Lack of near real-time analytical capabilities
 
-This platform centralizes, validates, and standardizes ecommerce data into a single source of truth.
+Without a unified data foundation, decision-making becomes fragmented and reactive.
 
 ## 🚀 Features
 
