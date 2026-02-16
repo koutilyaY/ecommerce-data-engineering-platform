@@ -3,6 +3,32 @@ Modern End-to-End Data Engineering Project Using Airflow, Kafka, Postgres, Docke
 
 This project demonstrates a production-grade data engineering platform designed to process, transform, and analyze ecommerce data. It includes batch ingestion, real-time streaming pipelines, orchestration, data quality checks, a dimensional data warehouse, and a Business Intelligence dashboard built using Apache Superset.
 
+Business Problem Solved
+
+Ecommerce organizations frequently face:
+
+Fragmented data sources
+
+Inconsistent metrics across teams
+
+Poor visibility into revenue and operational KPIs
+
+Unreliable data due to missing validations
+
+Lack of real-time analytics capability
+
+This platform centralizes and validates data across the business lifecycle, enabling:
+
+Revenue tracking
+
+Average Order Value (AOV) monitoring
+
+Delivery performance analytics
+
+Customer behavior insights
+
+Data-driven operational decisions
+
 ## 🚀 Features
 
 - **Batch Data Pipelines (Airflow)**
