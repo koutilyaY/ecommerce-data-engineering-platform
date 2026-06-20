@@ -4,7 +4,7 @@ services:
     container_name: postgres
     environment:
       POSTGRES_USER: airflow
-      POSTGRES_PASSWORD: airflow
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ecommerce_dw
     ports:
       - "5433:5432"
@@ -20,8 +20,8 @@ services:
     environment:
       AIRFLOW__CORE__LOAD_EXAMPLES: "false"
       AIRFLOW__CORE__EXECUTOR: "LocalExecutor"
-      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
-      AIRFLOW__WEBSERVER__SECRET_KEY: "SFwXQLN7j93inNAh2VwGHlpr9vUceKsdXpT9jgUEBgm2iY4IDpZUVIbHyRrSYAPb_Frzcc6hr1JwtZLrwVw0Cw"
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:${POSTGRES_PASSWORD}@postgres:5432/airflow
+      AIRFLOW__WEBSERVER__SECRET_KEY: ${AIRFLOW_WEBSERVER_SECRET_KEY}
     command: webserver
     ports:
       - "8081:8080"
@@ -40,8 +40,8 @@ services:
     environment:
       AIRFLOW__CORE__LOAD_EXAMPLES: "false"
       AIRFLOW__CORE__EXECUTOR: "LocalExecutor"
-      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
-      AIRFLOW__WEBSERVER__SECRET_KEY: "SFwXQLN7j93inNAh2VwGHlpr9vUceKsdXpT9jgUEBgm2iY4IDpZUVIbHyRrSYAPb_Frzcc6hr1JwtZLrwVw0Cw"
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:${POSTGRES_PASSWORD}@postgres:5432/airflow
+      AIRFLOW__WEBSERVER__SECRET_KEY: ${AIRFLOW_WEBSERVER_SECRET_KEY}
     command: scheduler
     volumes:
       - ./dags:/opt/airflow/dags
@@ -56,7 +56,8 @@ services:
     environment:
       SUPERSET_ENV: production
       SUPERSET_LOAD_EXAMPLES: "no"
-      SUPERSET_SECRET_KEY: "iSXOgIfqsirHrjOM_1hYsH4wGJdv_NmqsIdClrPIpwwWD77o8YYBnbaVnBfi4sOh_n0UvwkuOdL7n2hQRBfq8w"
+      SUPERSET_SECRET_KEY: ${SUPERSET_SECRET_KEY}
+      SUPERSET_ADMIN_PASSWORD: ${SUPERSET_ADMIN_PASSWORD}
     ports:
       - "8088:8088"
     volumes:
@@ -65,7 +66,7 @@ services:
       /bin/sh -c "
       superset db upgrade &&
       superset fab create-admin --username admin --firstname admin --lastname admin
-      --email admin@admin.com --password admin || true &&
+      --email admin@admin.com --password $${SUPERSET_ADMIN_PASSWORD} || true &&
       superset init &&
       superset run -p 8088 -h 0.0.0.0
       "
